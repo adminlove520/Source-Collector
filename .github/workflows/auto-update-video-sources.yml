@@ -1,0 +1,89 @@
+name: 自动更新视频源配置
+
+on:
+  # 每天23:00自动执行
+  schedule:
+    - cron: '0 23 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  update-video-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: 设置Git环境
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+      
+      - name: 更新 yoyo.json
+        run: |
+          echo "正在更新 yoyo.json..."
+          curl -s -o yoyo.json.temp https://cdn.jsdelivr.net/gh/waifu-project/v1@latest/yoyo.json
+          if [ -f yoyo.json.temp ]; then
+            # 验证JSON格式
+            if jq empty yoyo.json.temp 2>/dev/null; then
+              # 比较文件内容是否有变化
+              if [ ! -f yoyo.json ] || ! cmp -s yoyo.json.temp yoyo.json; then
+                mv yoyo.json.temp yoyo.json
+                echo "yoyo.json 更新成功"
+                echo "YOYO_UPDATED=true" >> $GITHUB_ENV
+              else
+                echo "yoyo.json 没有变化，跳过更新"
+                rm yoyo.json.temp
+              fi
+            else
+              echo "错误：下载的yoyo.json不是有效的JSON格式"
+              rm yoyo.json.temp
+            fi
+          else
+            echo "错误：无法下载yoyo.json"
+          fi
+      
+      - name: 更新 Sites.json
+        run: |
+          echo "正在更新 Sites.json..."
+          curl -s -o Sites.json.temp https://cdn.jsdelivr.net/gh/cuiocean/ZY-Player-Resources/Sites/Sites.json
+          if [ -f Sites.json.temp ]; then
+            # 验证JSON格式
+            if jq empty Sites.json.temp 2>/dev/null; then
+              # 比较文件内容是否有变化
+              if [ ! -f Sites.json ] || ! cmp -s Sites.json.temp Sites.json; then
+                mv Sites.json.temp Sites.json
+                echo "Sites.json 更新成功"
+                echo "SITES_UPDATED=true" >> $GITHUB_ENV
+              else
+                echo "Sites.json 没有变化，跳过更新"
+                rm Sites.json.temp
+              fi
+            else
+              echo "错误：下载的Sites.json不是有效的JSON格式"
+              rm Sites.json.temp
+            fi
+          else
+            echo "错误：无法下载Sites.json"
+          fi
+      
+      - name: 提交更新
+        run: |
+          if [ "${{ env.YOYO_UPDATED }}" = "true" ] || [ "${{ env.SITES_UPDATED }}" = "true" ]; then
+            echo "准备提交更新..."
+            git add yoyo.json Sites.json
+            git commit -m "自动更新视频源配置 $(date +'%Y-%m-%d')"
+            git push origin HEAD:main
+            echo "更新已提交到仓库"
+          else
+            echo "没有文件需要更新"
+          fi
+      
+      - name: 发送通知（可选）
+        if: always() && (env.YOYO_UPDATED == 'true' || env.SITES_UPDATED == 'true')
+        run: |
+          echo "视频源配置已更新！"
+          echo "- yoyo.json: ${{ env.YOYO_UPDATED == 'true' && '已更新' || '无变化' }}"
+          echo "- Sites.json: ${{ env.SITES_UPDATED == 'true' && '已更新' || '无变化' }}"

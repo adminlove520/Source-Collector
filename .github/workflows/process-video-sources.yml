@@ -1,0 +1,254 @@
+name: Process Video Sources from Issues
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created]
+
+jobs:
+  process-video-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub PyYAML
+      
+      - name: Process issue for video sources
+        id: process
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body || github.event.comment.body }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login || github.event.comment.user.login }}
+        run: |
+          python -c """
+          import os
+          import json
+          import re
+          from datetime import datetime
+          from github import Github
+          
+          # Initialize GitHub client
+          g = Github(os.environ['GITHUB_TOKEN'])
+          repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
+          issue_number = int(os.environ['ISSUE_NUMBER'])
+          issue = repo.get_issue(number=issue_number)
+          issue_body = os.environ['ISSUE_BODY']
+          issue_author = os.environ['ISSUE_AUTHOR']
+          
+          # Check if issue is labeled or comment contains marker
+          should_process = False
+          for label in issue.labels:
+              if label.name.lower() == 'video-source' or label.name.lower() == '视频源':
+                  should_process = True
+          
+          if not should_process:
+              # Check for marker in body
+              if re.search(r'视频源|video.?source', issue_body, re.IGNORECASE):
+                  should_process = True
+          
+          if not should_process:
+              print('Issue does not contain video source label or marker, skipping...')
+              print('::set-output name=processed::false')
+              exit(0)
+          
+          # Extract JSON content from code blocks or attachments
+          json_content = None
+          
+          # Try to find JSON in code blocks
+          code_blocks = re.findall(r'```(json)?\s*(.*?)\s*```', issue_body, re.DOTALL)
+          for lang, content in code_blocks:
+              if lang == 'json' or (lang == '' and content.strip().startswith('[') and content.strip().endswith(']')):
+                  try:
+                      parsed_json = json.loads(content)
+                      json_content = parsed_json
+                      break
+                  except json.JSONDecodeError:
+                      continue
+          
+          # If no JSON found, try to parse the entire body
+          if json_content is None:
+              try:
+                  parsed_json = json.loads(issue_body)
+                  json_content = parsed_json
+              except json.JSONDecodeError:
+                  pass
+          
+          if json_content is None:
+              issue.create_comment(f"感谢 @{issue_author} 的贡献！但我无法从您的issue中提取有效的JSON内容。请确保JSON格式正确并使用代码块包装。")
+              print('No valid JSON found in issue body')
+              print('::set-output name=processed::false')
+              exit(0)
+          
+          # Validate JSON structure
+          if not isinstance(json_content, list):
+              issue.create_comment(f"感谢 @{issue_author} 的贡献！JSON内容必须是数组格式。")
+              print('JSON content is not a list')
+              print('::set-output name=processed::false')
+              exit(0)
+          
+          # Check if each item has required fields
+          valid_items = []
+          for item in json_content:
+              if isinstance(item, dict) and 'name' in item and 'api' in item:
+                  # Ensure 'key', 'disabled', 'is_adult' fields exist
+                  if 'key' not in item:
+                      # 生成基于名称的简短hash作为key
+                      import hashlib
+                      # 移除特殊字符，保留字母数字和中文
+                      clean_name = re.sub(r'[^a-zA-Z0-9\u4e00-\u9fa5]', '_', item['name'])
+                      # 生成基于名称的简短hash作为key
+                      item['key'] = 'csp_' + hashlib.md5(clean_name.encode('utf-8')).hexdigest()[:8]
+                  if 'disabled' not in item:
+                      item['disabled'] = False
+                  if 'is_adult' not in item:
+                      item['is_adult'] = False
+                  if 'detail' not in item:
+                      item['detail'] = ''
+                  valid_items.append(item)
+          
+          if not valid_items:
+              issue.create_comment(f"感谢 @{issue_author} 的贡献！但JSON中没有有效的视频源项目。每个项目必须包含name和api字段。")
+              print('No valid video source items found in JSON')
+              print('::set-output name=processed::false')
+              exit(0)
+          
+          # Extract application information
+          application_info = "通用"
+          apps = []
+          
+          # Try to find application info in the issue body
+          app_patterns = {
+              'LibreTV': r'libretv',
+              'MoonTV': r'moontv',
+              '小猫影视': r'小猫影视|xiaomaotv',
+              'OmniBox': r'omnibox',
+              'DecoTV': r'decotv',
+              'LunaTV': r'lunatv'
+          }
+          
+          for app, pattern in app_patterns.items():
+              if re.search(pattern, issue_body, re.IGNORECASE):
+                  apps.append(app)
+          
+          if apps:
+              application_info = ' / '.join(apps)
+          
+          # Generate filename
+          timestamp = datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
+          filename = f'video_sources_{timestamp}.json'
+          
+          # Save JSON file
+          with open(filename, 'w', encoding='utf-8') as f:
+              json.dump(valid_items, f, ensure_ascii=False, indent=2)
+          
+          print(f'Saved {len(valid_items)} video sources to {filename}')
+          print(f'::set-output name=filename::{filename}')
+          print(f'::set-output name=app_info::{application_info}')
+          print(f'::set-output name=processed::true')
+          
+          # Update README.md
+          with open('README.md', 'r', encoding='utf-8') as f:
+              readme_content = f.read()
+          
+          # Find the appropriate section based on application_info
+          section_mapping = {
+              'LibreTV / MoonTV': '### 1. 适用于 LibreTV / MoonTV 的配置',
+              '小猫影视': '### 3. 适用于 小猫影视 的配置',
+              'DecoTV / LunaTV': '### 4. 适用于 DecoTV / LunaTV 的配置'
+          }
+          
+          target_section = None
+          for apps_key, section in section_mapping.items():
+              if apps_key in application_info:
+                  target_section = section
+                  break
+          
+          # If no specific section found, add to a generic section
+          if not target_section:
+              # Check if generic section exists
+              if '### 5. 通用配置文件' not in readme_content:
+                  # Add after last section
+                  readme_content += '\n\n### 5. 通用配置文件\n'
+              target_section = '### 5. 通用配置文件'
+          
+          # Find the position to insert
+          section_pos = readme_content.find(target_section)
+          if section_pos != -1:
+              # Find the next section marker or end of file
+              next_section_pos = readme_content.find('### ', section_pos + len(target_section))
+              if next_section_pos == -1:
+                  next_section_pos = len(readme_content)
+              
+              # Insert the new file reference
+              insert_line = f'- `{filename}` - 适用于 {application_info}\n'
+              
+              # Check if the line already exists
+              if insert_line not in readme_content[section_pos:next_section_pos]:
+                  # Find the first bullet point or add after the section header
+                  bullet_pos = readme_content.find('- `', section_pos + len(target_section))
+                  if bullet_pos == -1 or bullet_pos > next_section_pos:
+                      # Add after the section header
+                      insert_pos = section_pos + len(target_section)
+                      while insert_pos < len(readme_content) and readme_content[insert_pos] == '\n':
+                          insert_pos += 1
+                      readme_content = readme_content[:insert_pos] + '\n' + insert_line + readme_content[insert_pos:]
+                  else:
+                      # Add before the first bullet point
+                      readme_content = readme_content[:bullet_pos] + insert_line + readme_content[bullet_pos:]
+          
+          # Save updated README
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(readme_content)
+          
+          print('Updated README.md with new file reference')
+          """
+      
+      - name: Commit and push changes
+        if: steps.process.outputs.processed == 'true'
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add .
+          git commit -m "Add new video sources from issue #${{ github.event.issue.number }}"
+          git push
+      
+      - name: Comment on issue
+        if: steps.process.outputs.processed == 'true'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issueNumber = ${{ github.event.issue.number }};
+            const filename = '${{ steps.process.outputs.filename }}';
+            const appInfo = '${{ steps.process.outputs.app_info }}';
+            const author = '${{ github.event.issue.user.login || github.event.comment.user.login }}';
+            
+            await github.rest.issues.createComment({
+              issue_number: issueNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `感谢 @${author} 的贡献！\n\n您提交的视频源已成功处理并添加到仓库中：\n- 文件名：\`${filename}\`\n- 适用范围：${appInfo}\n\nREADME.md 已自动更新以包含此配置文件信息。\n\n如果您有任何其他视频源想要贡献，请继续提交新的 issue！`
+            });
+            
+            // Add a label to the issue
+            await github.rest.issues.addLabels({
+              issue_number: issueNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['processed']
+            });

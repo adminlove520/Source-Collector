@@ -1,0 +1,866 @@
+[
+  {
+    "name": "电影天堂资源",
+    "key": "csp_dyttzy",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+    "detail": "http://caiji.dyttzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "黑木耳",
+    "key": "csp_heimuer",
+    "api": "https://json.heimuer.xyz/api.php/provide/vod",
+    "detail": "https://heimuer.tv",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "如意资源",
+    "key": "csp_ruyi",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "暴风资源",
+    "key": "csp_bfzy",
+    "api": "https://bfzyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "天涯资源",
+    "key": "csp_tyyszy",
+    "api": "https://tyyszy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "非凡影视",
+    "key": "csp_ffzy",
+    "api": "http://ffzy5.tv/api.php/provide/vod",
+    "detail": "http://ffzy5.tv",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "360资源",
+    "key": "csp_zy360",
+    "api": "https://360zy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "茅台资源",
+    "key": "csp_maotaizy",
+    "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "卧龙资源",
+    "key": "csp_wolong",
+    "api": "https://wolongzyw.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "极速资源",
+    "key": "csp_jisu",
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "detail": "https://jszyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "豆瓣资源",
+    "key": "csp_dbzy",
+    "api": "https://dbzy.tv/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "魔爪资源",
+    "key": "csp_mozhua",
+    "api": "https://mozhuazy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "魔都资源",
+    "key": "csp_mdzy",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "最大资源",
+    "key": "csp_zuid",
+    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "樱花资源",
+    "key": "csp_yinghua",
+    "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "无尽资源",
+    "key": "csp_wujin",
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "旺旺短剧",
+    "key": "csp_wwzy",
+    "api": "https://wwzy.tv/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "iKun资源",
+    "key": "csp_ikun",
+    "api": "https://ikunzyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "量子资源站",
+    "key": "csp_lzi",
+    "api": "https://cj.lziapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "小猫咪资源",
+    "key": "csp_xiaomaomi",
+    "api": "https://zy.xmm.hk/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-1080资源",
+    "key": "csp_1080zyku",
+    "api": "https://api.1080zyku.com/inc/api_mac10.php",
+    "detail": "https://api.1080zyku.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "AV-155资源",
+    "key": "csp_155api",
+    "api": "https://155api.com/api.php/provide/vod",
+    "detail": "https://155api.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "TV-360资源",
+    "key": "csp_360zy",
+    "api": "https://360zy.com/api.php/provide/vod",
+    "detail": "https://360zy.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-CK资源",
+    "key": "csp_ckzy",
+    "api": "https://ckzy.me/api.php/provide/vod",
+    "detail": "https://ckzy.me",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-U酷资源",
+    "key": "csp_ukuapi",
+    "api": "https://api.ukuapi.com/api.php/provide/vod",
+    "detail": "https://api.ukuapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-U酷资源88",
+    "key": "csp_ukuapi88",
+    "api": "https://api.ukuapi88.com/api.php/provide/vod",
+    "detail": "https://api.ukuapi88.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-ikun资源",
+    "key": "csp_ikunzy",
+    "api": "https://ikunzyapi.com/api.php/provide/vod",
+    "detail": "https://ikunzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-wujinapi无尽",
+    "key": "csp_wujinapi_cc",
+    "api": "https://api.wujinapi.cc/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-丫丫点播",
+    "key": "csp_yayazy",
+    "api": "https://cj.yayazy.net/api.php/provide/vod",
+    "detail": "https://cj.yayazy.net",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-光速资源",
+    "key": "csp_guangsuapi",
+    "api": "https://api.guangsuapi.com/api.php/provide/vod",
+    "detail": "https://api.guangsuapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-卧龙点播",
+    "key": "csp_wolongzyw",
+    "api": "https://collect.wolongzyw.com/api.php/provide/vod",
+    "detail": "https://collect.wolongzyw.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-卧龙资源",
+    "key": "csp_wolongzy_cc",
+    "api": "https://collect.wolongzy.cc/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-卧龙资源",
+    "key": "csp_wolongzyw_com",
+    "api": "https://wolongzyw.com/api.php/provide/vod",
+    "detail": "https://wolongzyw.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-如意资源",
+    "key": "csp_rycjapi",
+    "api": "https://cj.rycjapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-新浪点播",
+    "key": "csp_xinlangapi",
+    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+    "detail": "https://api.xinlangapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-无尽资源",
+    "key": "csp_wujinapi_com",
+    "api": "https://api.wujinapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-无尽资源",
+    "key": "csp_wujinapi_me",
+    "api": "https://api.wujinapi.me/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-无尽资源",
+    "key": "csp_wujinapi_net",
+    "api": "https://api.wujinapi.net/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-旺旺资源",
+    "key": "csp_wwzy_api",
+    "api": "https://api.wwzy.tv/api.php/provide/vod",
+    "detail": "https://api.wwzy.tv",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-暴风资源",
+    "key": "csp_bfzyapi",
+    "api": "https://bfzyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-最大点播",
+    "key": "csp_zuidazy",
+    "api": "http://zuidazy.me/api.php/provide/vod",
+    "detail": "http://zuidazy.me",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-最大资源",
+    "key": "csp_zuidapi",
+    "api": "https://api.zuidapi.com/api.php/provide/vod",
+    "detail": "https://api.zuidapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-樱花资源",
+    "key": "csp_apiyhzy",
+    "api": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-步步高资源",
+    "key": "csp_yparse",
+    "api": "https://api.yparse.com/api/json",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-牛牛点播",
+    "key": "csp_niuniuzy",
+    "api": "https://api.niuniuzy.me/api.php/provide/vod",
+    "detail": "https://api.niuniuzy.me",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-电影天堂资源",
+    "key": "csp_dyttzyapi",
+    "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+    "detail": "http://caiji.dyttzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "AV-百万资源",
+    "key": "csp_bwzyz",
+    "api": "https://api.bwzyz.com/api.php/provide/vod",
+    "detail": "https://api.bwzyz.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "TV-百度云资源",
+    "key": "csp_apibdzy",
+    "api": "https://api.apibdzy.com/api.php/provide/vod",
+    "detail": "https://api.apibdzy.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-神马云",
+    "key": "csp_1080zyku_json",
+    "api": "https://api.1080zyku.com/inc/apijson.php/",
+    "detail": "https://api.1080zyku.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-索尼资源",
+    "key": "csp_suoniapi",
+    "api": "https://suoniapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-红牛资源",
+    "key": "csp_hongniuzy2",
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod",
+    "detail": "https://www.hongniuzy2.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-虎牙资源",
+    "key": "csp_huyaapi",
+    "api": "https://www.huyaapi.com/api.php/provide/vod",
+    "detail": "https://www.huyaapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-豆瓣资源",
+    "key": "csp_dbzy_caiji",
+    "api": "https://caiji.dbzy.tv/api.php/provide/vod",
+    "detail": "https://caiji.dbzy.tv",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-豪华资源",
+    "key": "csp_hhzyapi",
+    "api": "https://hhzyapi.com/api.php/provide/vod",
+    "detail": "https://hhzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-速博资源",
+    "key": "csp_subocaiji",
+    "api": "https://subocaiji.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-量子资源",
+    "key": "csp_lziapi",
+    "api": "https://cj.lziapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-金鹰点播",
+    "key": "csp_jinyingzy",
+    "api": "https://jinyingzy.com/api.php/provide/vod",
+    "detail": "https://jinyingzy.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-金鹰资源",
+    "key": "csp_jyzyapi",
+    "api": "https://jyzyapi.com/api.php/provide/vod",
+    "detail": "https://jyzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-闪电资源",
+    "key": "csp_sdzyapi",
+    "api": "https://sdzyapi.com/api.php/provide/vod",
+    "detail": "https://sdzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-非凡资源",
+    "key": "csp_ffzyapi",
+    "api": "https://cj.ffzyapi.com/api.php/provide/vod",
+    "detail": "https://cj.ffzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-飘零资源",
+    "key": "csp_p2100",
+    "api": "https://p2100.net/api.php/provide/vod",
+    "detail": "https://p2100.net",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-魔爪资源",
+    "key": "csp_mozhuazy",
+    "api": "https://mozhuazy.com/api.php/provide/vod",
+    "detail": "https://mozhuazy.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-魔都动漫",
+    "key": "csp_moduapi",
+    "api": "https://caiji.moduapi.cc/api.php/provide/vod",
+    "detail": "https://caiji.moduapi.cc",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-魔都资源",
+    "key": "csp_mdzyapi",
+    "api": "https://www.mdzyapi.com/api.php/provide/vod",
+    "detail": "https://www.mdzyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "TV-黑木耳点播",
+    "key": "csp_heimuer02",
+    "api": "https://json02.heimuer.xyz/api.php/provide/vod",
+    "detail": "https://json02.heimuer.xyz",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "AV-91麻豆",
+    "key": "csp_91md",
+    "api": "https://91md.me/api.php/provide/vod",
+    "detail": "https://91md.me",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-AIvin",
+    "key": "csp_lbapiby",
+    "api": "http://lbapiby.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-JKUN资源",
+    "key": "csp_jkunzyapi",
+    "api": "https://jkunzyapi.com/api.php/provide/vod",
+    "detail": "https://jkunzyapi.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-souav资源",
+    "key": "csp_souavzy",
+    "api": "https://api.souavzy.vip/api.php/provide/vod",
+    "detail": "https://api.souavzy.vip",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-乐播资源",
+    "key": "csp_lbapi9",
+    "api": "https://lbapi9.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-奥斯卡资源",
+    "key": "csp_aosikazy",
+    "api": "https://aosikazy.com/api.php/provide/vod",
+    "detail": "https://aosikazy.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-奶香香",
+    "key": "csp_naixxzy",
+    "api": "https://Naixxzy.com/api.php/provide/vod",
+    "detail": "https://Naixxzy.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-森林资源",
+    "key": "csp_slapibf",
+    "api": "https://slapibf.com/api.php/provide/vod",
+    "detail": "https://slapibf.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-淫水机资源",
+    "key": "csp_xrbsp",
+    "api": "https://www.xrbsp.com/api/json.php",
+    "detail": "https://www.xrbsp.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-玉兔资源",
+    "key": "csp_apiyutu",
+    "api": "https://apiyutu.com/api.php/provide/vod",
+    "detail": "https://apiyutu.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-番号资源",
+    "key": "csp_fhapi9",
+    "api": "http://fhapi9.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-白嫖资源",
+    "key": "csp_kxgav",
+    "api": "https://www.kxgav.com/api/json.php",
+    "detail": "https://www.kxgav.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-精品资源",
+    "key": "csp_jingpinx",
+    "api": "https://www.jingpinx.com/api.php/provide/vod",
+    "detail": "https://www.jingpinx.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-美少女资源",
+    "key": "csp_msnii",
+    "api": "https://www.msnii.com/api/json.php",
+    "detail": "https://www.msnii.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-老色逼资源",
+    "key": "csp_apilsbzy1",
+    "api": "https://apilsbzy1.com/api.php/provide/vod",
+    "detail": "https://apilsbzy1.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-色嗨国",
+    "key": "csp_sexnguon",
+    "api": "https://api.sexnguon.com/api.php/provide/vod",
+    "detail": "https://api.sexnguon.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-色猫资源",
+    "key": "csp_maozyapi",
+    "api": "https://api.maozyapi.com/inc/apijson_vod.php",
+    "detail": "https://api.maozyapi.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-辣椒资源",
+    "key": "csp_apilj",
+    "api": "https://apilj.com/api.php/provide/vod",
+    "detail": "https://apilj.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-香奶儿资源",
+    "key": "csp_gdlsp",
+    "api": "https://www.gdlsp.com/api/json.php",
+    "detail": "https://www.gdlsp.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-鲨鱼资源",
+    "key": "csp_shayuapi",
+    "api": "https://shayuapi.com/api.php/provide/vod",
+    "detail": "https://shayuapi.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "AV-黄AV资源",
+    "key": "csp_pgxdy",
+    "api": "https://www.pgxdy.com/api/json.php",
+    "detail": "https://www.pgxdy.com",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "非凡影视new",
+    "key": "csp_ffzynew",
+    "api": "https://api.ffzyapi.com/api.php/provide/vod",
+    "detail": "http://ffzy5.tv",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "极速资源",
+    "key": "csp_jszyapi",
+    "api": "https://jszyapi.com/api.php/provide/vod",
+    "detail": "https://jszyapi.com",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "快播资源网站",
+    "key": "csp_gayapi",
+    "api": "https://gayapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "性吧资源",
+    "key": "csp_xingba111",
+    "api": "https://xingba111.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "爱短剧.cc",
+    "key": "csp_aiduanju",
+    "api": "https://www.aiduanju.cc/",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "华为吧资源",
+    "key": "csp_huawei8",
+    "api": "https://huawei8.live/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "淘片资源",
+    "key": "csp_taopianapi",
+    "api": "https://taopianapi.com/cjapi/sda/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "红牛资源",
+    "key": "csp_hongniuzy3",
+    "api": "https://www.hongniuzy3.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "索尼-闪电资源",
+    "key": "csp_xsd_sdzyapi",
+    "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "金鹰资源采集网",
+    "key": "csp_jyzyapi_provide",
+    "api": "https://jyzyapi.com/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "蜂巢片库",
+    "key": "csp_fczy888",
+    "api": "https://api.fczy888.me/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "金马资源网",
+    "key": "csp_jmzy",
+    "api": "https://api.jmzy.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "大地资源网络",
+    "key": "csp_dadiapi",
+    "api": "https://dadiapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "黄色资源啊啊",
+    "key": "csp_hsckzy888",
+    "api": "https://hsckzy888.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "小鸡资源",
+    "key": "csp_xiaojizy",
+    "api": "https://api.xiaojizy.live/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "快车资源阿",
+    "key": "csp_kuaichezy",
+    "api": "https://caiji.kuaichezy.org/api.php/provide",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "新浪资源阿",
+    "key": "csp_xinlangapi_provide",
+    "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "辣椒资源黄黄",
+    "key": "csp_apilj_provide",
+    "api": "https://apilj.com/api.php/provide",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "优质资源库1080zyk6.com高清",
+    "key": "csp_yzzy_api",
+    "api": "https://api.yzzy-api.com/inc/ldg_api_all.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "iqiyi资源",
+    "key": "csp_iqiyizyapi",
+    "api": "https://www.iqiyizyapi.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  },
+  {
+    "name": "细胞采集黄色",
+    "key": "csp_xxibaozyw",
+    "api": "https://www.xxibaozyw.com/api.php/provide/vod",
+    "detail": "",
+    "disabled": false,
+    "is_adult": true
+  },
+  {
+    "name": "七七影视",
+    "key": "csp_qiqidys",
+    "api": "https://www.qiqidys.com/api.php/provide/vod/",
+    "detail": "",
+    "disabled": false,
+    "is_adult": false
+  }
+]
