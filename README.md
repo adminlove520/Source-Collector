@@ -22,6 +22,7 @@
 
 ### 4. 适用于 DecoTV / LunaTV 的配置
 - `video_sources_2025-11-19T09-22-39.json` - 适用于 [DecoTV](https://github.com/Decohererk/DecoTV) 和 [LunaTV](https://github.com/SzeMeng76/LunaTV)
+- `source-2025.11.20.json` - 适用于 [DecoTV](https://github.com/Decohererk/DecoTV) 和 [LunaTV](https://github.com/SzeMeng76/LunaTV) (更新版，包含46个视频源)
 
 ## 免责声明
 
